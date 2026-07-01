@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../../tstReServer/Shared/Shared.csproj" />
+  <Project Path="P2PChat.csproj" />
+</Solution>

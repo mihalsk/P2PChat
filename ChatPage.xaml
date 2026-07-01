@@ -1,0 +1,30 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P2PChat.ChatPage"
+             Title="Чат">
+
+    <Grid RowDefinitions="*, Auto">
+        <CollectionView x:Name="cvConversation"
+                        Grid.Row="0"
+                        Margin="5"
+                        ItemsSource="{Binding Messages}"
+                        VerticalScrollBarVisibility="Always">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, Auto" Margin="5">
+            <Entry x:Name="txtMessage"
+                   Grid.Column="0"
+                   Placeholder="Введите сообщение..."
+                   Completed="OnMessageCompleted" />
+            <Button x:Name="btnSend"
+                    Grid.Column="1"
+                    Text="Отправить"
+                    Clicked="OnSendClicked" />
+        </Grid>
+    </Grid>
+</ContentPage>
